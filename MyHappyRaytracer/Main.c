@@ -6,25 +6,35 @@
 #include "Vector3.h"
 
 //returns if the ray hits sphere
-bool hit_Sphere(point3 Center, double radius, Ray r) {
+double hit_Sphere(point3 Center, double radius, Ray r) {
 	Vector3 oc = operator_difOfTwoVect3(r.origin, Center);
 	double a = dot(r.direction, r.direction);
 	double b = 2.0 * dot(oc, r.direction);
 	double c = dot(oc, oc) - (radius * radius);
 	double discriminant = (b * b) - (4 * a * c);
 	
-	return(discriminant > 0);
+	if (discriminant < 0) {
+		return -1.0;
+	}
+	else {
+		return ((-b - sqrt(discriminant)) / (2.0 * a));
+	}
 }
 
 //return color red for ray that hits sphere
 color ray_Color(Ray r) {
 	point3 sphere_c = fill_Vector(0, 0, -1);
-	if (hit_Sphere(sphere_c, 0.5, r)) {
-		color color_return = fill_Vector(1, 0, 0); //color red
+	double t = hit_Sphere(sphere_c, 0.5, r);
+	if (t > 0.0) {
+		//color color_return = fill_Vector(1, 0, 0); //color red
+		Vector3 auxV = fill_Vector(0, 0, -1);
+		Vector3 N = unit_vec(operator_difOfTwoVect3(at(r, t), auxV));
+		color color_return = fill_Vector(x(N)+1.0, y(N) + 1.0, z(N) + 1.0);
+		color_return = operator_multiplyVect3ByT(color_return, 0.5);
 		return color_return;
 	}
 	Vector3 unit_dir = unit_vec(r.direction);
-	double t = 0.5 * (y(unit_dir) + 1.0);
+	t = 0.5 * (y(unit_dir) + 1.0);
 	color aux_color1, aux_color2;
 	aux_color1 = fill_Vector(1.0, 1.0, 1.0);
 	aux_color2 = fill_Vector(0.5, 0.7, 1.0);
