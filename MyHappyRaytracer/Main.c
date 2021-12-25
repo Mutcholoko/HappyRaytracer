@@ -6,27 +6,21 @@
 int main(void) {
 
 	//image parameters
-	int img_width = 256;
-	int img_height = 256;
+	double img_width = 256.0;
+	double img_height = 256.0;
 
 	//rendering
 	printf("P3\n");
-	printf("%d %d", img_width, img_height);
+	printf("%d %d", (int)img_width, (int)img_height);
 	printf("\n255\n");
 
 	for (int j = img_height-1; j >= 0 ; j--) {
 		//progress handling
-		fprintf(stderr, "lines remaining: %d", j);
-		for (int i = 0; i < img_width; i++) {
-			double red = ((double) i) / (img_width - 1);
-			double green = ((double)j) / (img_height - 1);
-			double blue = 0.25;
+		fprintf(stderr, "lines remaining: %d\n", j);
 
-			int img_r = (int)(255.999 * red);
-			int img_g = (int)(255.999 * green);
-			int img_b = (int)(255.999 * blue);
-		
-			printf("%d %d %d\n", img_r, img_g, img_b);
+		for (int i = 0; i < img_width; i++) {
+			color p_color = { (double)i / (img_width - 1), (double)j / (img_height - 1), 0.25 };
+			write_color(p_color);
 		}
 	}
 	fprintf(stderr, "Done.\n");

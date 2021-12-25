@@ -56,13 +56,13 @@ Vector3 operator_dividedEqual(Vector3 vector, const double t) {
 	return vector;
 }
 
-double length(Vector3 vector){
-    return sqrt(length_squared(vector));
-}
-
 double length_squared(Vector3 vector){
 	double return_this = vector.Vect3[0] * vector.Vect3[0] + vector.Vect3[1] * vector.Vect3[1] + vector.Vect3[2] * vector.Vect3[2];
 	return return_this;
+}
+
+double length(Vector3 vector) {
+	return sqrt(length_squared(vector));
 }
 
 void print_vector3(Vector3 vector) {
