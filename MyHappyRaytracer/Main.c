@@ -8,16 +8,16 @@
 //returns if the ray hits sphere
 double hit_Sphere(point3 Center, double radius, Ray r) {
 	Vector3 oc = operator_difOfTwoVect3(r.origin, Center);
-	double a = dot(r.direction, r.direction);
-	double b = 2.0 * dot(oc, r.direction);
-	double c = dot(oc, oc) - (radius * radius);
-	double discriminant = (b * b) - (4 * a * c);
+	double a = length_squared(r.direction);
+	double half_b = dot(oc, r.direction);
+	double c = length_squared(oc) - (radius * radius);
+	double discriminant = (half_b * half_b) - (a * c);
 	
 	if (discriminant < 0) {
 		return -1.0;
 	}
 	else {
-		return ((-b - sqrt(discriminant)) / (2.0 * a));
+		return ((-half_b - sqrt(discriminant)) / a);
 	}
 }
 
