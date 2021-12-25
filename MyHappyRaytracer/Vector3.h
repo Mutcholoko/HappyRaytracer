@@ -72,3 +72,36 @@ Vector3 operator_sumOfTwoVect3(Vector3 vect1, Vector3 vect2) {
 	return return_vec;
 }
 
+Vector3 operator_difOfTwoVect3(Vector3 vect1, Vector3 vect2) {
+	Vector3 return_vec;
+	return_vec.Vect3[0] = vect1.Vect3[0] - vect2.Vect3[0];
+	return_vec.Vect3[1] = vect1.Vect3[1] - vect2.Vect3[1];
+	return_vec.Vect3[2] = vect1.Vect3[2] - vect2.Vect3[2];
+	return return_vec;
+}
+
+Vector3 operator_multiplOfTwoVect3(Vector3 vect1, Vector3 vect2) {
+	Vector3 return_vec;
+	return_vec.Vect3[0] = vect1.Vect3[0] * vect2.Vect3[0];
+	return_vec.Vect3[1] = vect1.Vect3[1] * vect2.Vect3[1];
+	return_vec.Vect3[2] = vect1.Vect3[2] * vect2.Vect3[2];
+	return return_vec;
+}
+
+Vector3 operator_multiplyVect3ByT(Vector3 vect1, double t) {
+	Vector3 return_vec;
+	return_vec.Vect3[0] = vect1.Vect3[0] * t;
+	return_vec.Vect3[1] = vect1.Vect3[1] * t;
+	return_vec.Vect3[2] = vect1.Vect3[2] * t;
+	return return_vec;
+}
+
+Vector3 operator_divideVect3ByT(Vector3 vect1, double t) {
+	Vector3 return_vec;
+	return_vec.Vect3[0] = vect1.Vect3[0] * 1/t;
+	return_vec.Vect3[1] = vect1.Vect3[1] * 1/t;
+	return_vec.Vect3[2] = vect1.Vect3[2] * 1/t;
+	return return_vec;
+}
+
+Vector3 dot(Vector3 vect1, Vector3 vect2);
