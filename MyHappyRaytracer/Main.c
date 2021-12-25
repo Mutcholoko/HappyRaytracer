@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "Color.h"
+#include "Vector3.h"
 
 int main(void) {
 
@@ -13,8 +15,8 @@ int main(void) {
 	printf("\n255\n");
 
 	for (int j = img_height-1; j >= 0 ; j--) {
-		//progress handling, not working yet so commented out
-		//printf("#lines remaining: %d", j);
+		//progress handling
+		fprintf(stderr, "lines remaining: %d", j);
 		for (int i = 0; i < img_width; i++) {
 			double red = ((double) i) / (img_width - 1);
 			double green = ((double)j) / (img_height - 1);
@@ -27,8 +29,7 @@ int main(void) {
 			printf("%d %d %d\n", img_r, img_g, img_b);
 		}
 	}
-	//faulty progress handling
-	//printf("#Done.\n");
+	fprintf(stderr, "Done.\n");
 
 	return 0;
 }

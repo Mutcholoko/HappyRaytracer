@@ -1,9 +1,14 @@
+#ifndef VECTOR3_H
+#define VECTOR3_H
 #include <math.h>
 #include <stdio.h>
 
 typedef struct {
-	double Vect3[3] = { 0,0,0 };
+	double Vect3[3];
 } Vector3;
+
+typedef Vector3 color;
+typedef Vector3 point3;
 
 double x(Vector3 vector) {
 	return vector.Vect3[0];
@@ -104,7 +109,26 @@ Vector3 operator_divideVect3ByT(Vector3 vect1, double t) {
 	return return_vec;
 }
 
-//define these functions bro
-Vector3 dot(Vector3 vect1, Vector3 vect2);
-Vector3 cross(Vector3 vect1, Vector3 vect2);
-Vector3 unit_vec(Vector3 vector);
+double dot(Vector3 vect1, Vector3 vect2) {
+	double return_sum = 0;
+	return_sum += vect1.Vect3[0] * vect2.Vect3[0];
+	return_sum += vect1.Vect3[1] * vect2.Vect3[1];
+	return_sum += vect1.Vect3[2] * vect2.Vect3[2];
+	return return_sum;
+}
+
+Vector3 cross(Vector3 vect1, Vector3 vect2) {
+	Vector3 return_vector;
+	return_vector.Vect3[0] = (vect1.Vect3[1] * vect2.Vect3[2]) - (vect1.Vect3[2] * vect2.Vect3[1]);
+	return_vector.Vect3[1] = (vect1.Vect3[2] * vect2.Vect3[0]) - (vect1.Vect3[0] * vect2.Vect3[2]);
+	return_vector.Vect3[2] = (vect1.Vect3[0] * vect2.Vect3[1]) - (vect1.Vect3[1] * vect2.Vect3[0]);
+	return return_vector;
+}
+
+Vector3 unit_vec(Vector3 vector) {
+	Vector3 return_vector;
+	return_vector = operator_divideVect3ByT(vector, length(vector)); //it will divide the vector by its length
+	return return_vector;
+}
+
+#endif
