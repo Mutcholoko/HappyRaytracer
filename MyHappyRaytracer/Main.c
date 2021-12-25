@@ -41,9 +41,9 @@ int main(void) {
 	printf("%d %d", img_width, img_height);
 	printf("\n255\n");
 
-	for (int j = img_height-1; j >= 0 ; --j) {
+	for (int j = img_height-1; j >= 0 ; j--) {
 		fprintf(stderr, "lines remaining: %d\n", j);
-		for (int i = 0; i < img_width; ++i) {
+		for (int i = 0; i < img_width; i++) {
 			double u = (double)i / (img_width - 1);
 			double v = (double)j / (img_height - 1);
 
