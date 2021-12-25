@@ -10,4 +10,5 @@ I will be uploading pictures to keep track of the progress.
 
 ![PPM generated with happyRT](https://user-images.githubusercontent.com/46263572/147374274-6b2f0627-17f1-4fe6-9fa7-df5b71b05a29.png) ![Smooth sky PPM with HappyRT](https://user-images.githubusercontent.com/46263572/147389065-6313e9f3-9051-41d1-b2f8-fed882f58b93.png)
 
-![really basic sphere HappyRT](https://user-images.githubusercontent.com/46263572/147390749-6dc30587-4a5c-40bd-8615-f1fac591d1cb.png)
+![really basic sphere HappyRT](https://user-images.githubusercontent.com/46263572/147390749-6dc30587-4a5c-40bd-8615-f1fac591d1cb.png) ![normal sphere happyRT](https://user-images.githubusercontent.com/46263572/147391545-0c9054f9-dcce-46e3-a0d8-72104b1a5103.png)
+
