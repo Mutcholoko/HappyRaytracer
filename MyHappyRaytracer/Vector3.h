@@ -131,4 +131,12 @@ Vector3 unit_vec(Vector3 vector) {
 	return return_vector;
 }
 
+Vector3 fill_Vector(double x, double y, double z) {
+	Vector3 vect_return;
+	vect_return.Vect3[0] = x;
+	vect_return.Vect3[1] = y;
+	vect_return.Vect3[2] = z;
+	return vect_return;
+}
+
 #endif
