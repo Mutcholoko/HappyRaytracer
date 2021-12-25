@@ -64,3 +64,11 @@ void print_vector3(Vector3 vector) {
 	printf("%g %g %g", vector.Vect3[0], vector.Vect3[1], vector.Vect3[2]);
 }
 
+Vector3 operator_sumOfTwoVect3(Vector3 vect1, Vector3 vect2) {
+	Vector3 return_vec;
+	return_vec.Vect3[0] = vect1.Vect3[0] + vect2.Vect3[0];
+	return_vec.Vect3[1] = vect1.Vect3[1] + vect2.Vect3[1];
+	return_vec.Vect3[2] = vect1.Vect3[2] + vect2.Vect3[2];
+	return return_vec;
+}
+
