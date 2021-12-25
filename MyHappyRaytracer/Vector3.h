@@ -104,4 +104,7 @@ Vector3 operator_divideVect3ByT(Vector3 vect1, double t) {
 	return return_vec;
 }
 
+//define these functions bro
 Vector3 dot(Vector3 vect1, Vector3 vect2);
+Vector3 cross(Vector3 vect1, Vector3 vect2);
+Vector3 unit_vec(Vector3 vector);
